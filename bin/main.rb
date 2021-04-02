@@ -1,3 +1,3 @@
-require_relative '../lib/file_loader'
+require_relative '../lib/linters'
 
-my_file = FileLoader.new('test.rb')
+my_file = Linters.new('test.rb')
