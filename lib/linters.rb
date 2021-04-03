@@ -3,12 +3,13 @@ class Linters
     def initialize(file_path)
         @file_path = file_path
         @file_lines = File.readlines(@file_path)
-        @errors = []
+        @errors = [] # Array for storing all errors
     end
 
     # check all methods
     def run_checker
         trailing_white_spaces
+        count_ends
     end
 
     def trailing_white_spaces
@@ -21,20 +22,23 @@ class Linters
     end
 
     def count_ends
-        special_words = ['def','do','if']
+        special_words = ['def','do','if','class']
         count_start = 0
         count_end = 0
-        @file_lines.each do |line|
-            if special_words.inlcude?(line.split(' '))
-                count_start += 1
-            elsif line.strip == 'end'
-                count_end += 1
-            end    
+        @file_lines.each_with_index do |line,idx|
+            special_words.each do |word|
+                if line.split(' ').include?(word)
+                    count_start += 1
+                elsif line.strip == 'end'
+                    count_end += 1
+                end   
+            end
+             
         end 
         if count_start < count_end
-            @errors << 'You have extra "end" somewhere'
+            @errors << 'You have an extra "end" in your code, please remove it'
         elsif count_start > count_end
-            @errors << 'You are missing "end"'
+            @errors << 'You are missing "end" in your code'
         end
     end
 
@@ -42,6 +46,8 @@ class Linters
 end 
 
 
-
+fdx = Linters.new('test.rb')
+fdx.run_checker
+p fdx
 
 
