@@ -2,8 +2,13 @@ class Linters
     attr_reader :file_path, :content, :file_lines, :errors
     def initialize(file_path)
         @file_path = file_path
-        @file_lines = File.readlines(@file)
+        @file_lines = File.readlines(@file_path)
         @errors = []
+    end
+
+    # check all methods
+    def run_checker
+        trailing_white_spaces
     end
 
     def trailing_white_spaces
@@ -32,6 +37,8 @@ class Linters
             @errors << 'You are missing "end"'
         end
     end
+
+    
 end 
 
 
