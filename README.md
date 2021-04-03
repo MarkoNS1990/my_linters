@@ -1,4 +1,4 @@
-# Enumerables
+# My Custom Linters
 
 In this project I made custom linters for checking ruby syntax, I made checks for empty lines, trailing white spaces and unclosed blocks.
 
@@ -13,10 +13,6 @@ For the: [Github-link](https://github.com/MarkoNS1990/my_linters)
 
 - To install rspec `gem install rspec`
 - Rspec is used for testing purposes
-
-## Linters
-
-- Used Ruby Language to define various methods.
 
 ## Languages Used
 
