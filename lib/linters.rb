@@ -10,6 +10,7 @@ class Linters
     def run_checker
         trailing_white_spaces
         count_ends
+        empty_line
     end
 
     def trailing_white_spaces
@@ -39,6 +40,14 @@ class Linters
             @errors << 'You have an extra "end" in your code, please remove it'
         elsif count_start > count_end
             @errors << 'You are missing "end" in your code'
+        end
+    end
+
+    def empty_line
+        @file_lines.each_with_index do |line,idx|
+            if line.strip.empty?
+                @errors << "You have an empty line on line #{idx+1}, please remove it"
+            end
         end
     end
 

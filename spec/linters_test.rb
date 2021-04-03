@@ -16,4 +16,12 @@ describe Linters do
             expect(file.errors[1]).to eql('You have an extra "end" in your code, please remove it')
         end
     end
+
+    describe '#empty_line' do 
+        it 'Empty line in code' do
+            file = Linters.new('test.rb')
+            file.run_checker
+            expect(file.errors[2]).to eql('You have an empty line on line 3, please remove it')
+        end
+    end
 end
