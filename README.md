@@ -2,26 +2,84 @@
 
 In this project I made custom linters for checking ruby syntax, I made checks for empty lines, trailing white spaces and unclosed blocks.
 
-# Github link:
-
-- Clonning the project: git clone (https://github.com/MarkoNS1990/my_linters)
-- To open folder : cd .\my_linters\
-
 # Instructions
 
 For the: [Github-link](https://github.com/MarkoNS1990/my_linters)
 
+To get a local copy of the repository please run the following commands on your terminal:
+`$ cd my_linters`
+`$ git clone https://github.com/MarkoNS1990/my_linters.git`
+
 - To install rspec `gem install rspec`
 - Rspec is used for testing purposes
 
-## Languages Used
+## Built with
 
+- VS Code
 - Ruby
 
-### Testing instructions
+## Testing instructions
 
--to run tests cd into my_linters then type in terminal:
-`rspec spec/linters_test.rb`
+`$ cd my_linters`
+`$ rspec spec/linters_test.rb`
+
+## Good and Bad examples
+
+### **White trailing space**
+
+> Good example - pipe indicates the cursor
+
+```
+def my_method do|
+    puts 'Hello world'
+end
+```
+
+> Bad example
+
+```
+def my_method do |
+    puts 'Hello world'
+end
+```
+
+## Empty Line
+
+> Good example
+
+```
+def my_method do|
+    puts 'Hello world'
+end
+```
+
+> Bad example
+
+```
+def my_method do |
+    puts 'Hello world'
+
+end
+```
+
+## Unexpected end keyword
+
+> Good example
+
+```
+def my_method do|
+    puts 'Hello world'
+end
+```
+
+> Bad example
+
+```
+def my_method do |
+    puts 'Hello world'
+end
+end
+```
 
 # Authors
 
