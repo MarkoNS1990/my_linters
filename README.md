@@ -7,7 +7,7 @@ In this project I made custom linters for checking ruby syntax, I made checks fo
 For the: [Github-link](https://github.com/MarkoNS1990/my_linters)
 
 To get a local copy of the repository please run the following commands on your terminal:
-`$ cd my_linters`
+
 `$ git clone https://github.com/MarkoNS1990/my_linters.git`
 
 - To install rspec `gem install rspec`
@@ -25,11 +25,7 @@ To get a local copy of the repository please run the following commands on your 
 
 ## Test For Linter Errors
 
-> Copy your ruby file in the Ruby-Linters-Capstone folder
-
-```
-$ cd my_linters
-```
+> Copy your ruby file in the my_linters folder
 
 ```
 $ ruby bin/main.rb

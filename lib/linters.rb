@@ -4,10 +4,9 @@ class Linters
   def initialize(file_path)
     @file_path = file_path
     @file_lines = File.readlines(@file_path)
-    @errors = [] # Array for storing all errors
+    @errors = []
   end
 
-  # check all methods
   def run_checker
     trailing_white_spaces
     count_ends
@@ -23,7 +22,6 @@ class Linters
   def count_ends
     special_words = %w[def do if class]
     count_start = 0
-
     count_end = 0
 
     @file_lines.each do |line|
@@ -32,7 +30,6 @@ class Linters
 
       elsif line.strip == 'end'
         count_end += 1
-
       end
     end
 
