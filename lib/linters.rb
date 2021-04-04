@@ -47,9 +47,9 @@ class Linters
     end
   end
 
-  def logAllErrors
-    @errors.each_with_index do |err,idx|
-     puts "#{idx + 1} - #{err} "
+  def log_all_errors
+    @errors.each_with_index do |err, idx|
+      puts "#{idx + 1} - #{err} "
     end
   end
 end
