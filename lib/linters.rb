@@ -13,6 +13,15 @@ class Linters
     empty_line
   end
 
+  def log_all_errors
+    puts "#{@errors.length} errors found."
+    @errors.each_with_index do |err, idx|
+      puts "#{idx + 1} - #{err} "
+    end
+  end
+
+  private
+
   def trailing_white_spaces
     @file_lines.each_with_index do |line, idx|
       @errors << "You have a trailing white space on line #{idx + 1}" if line[-2] == ' '
@@ -43,13 +52,6 @@ class Linters
   def empty_line
     @file_lines.each_with_index do |line, idx|
       @errors << "You have an empty line on line #{idx + 1}, please remove it" if line.strip.empty?
-    end
-  end
-
-  def log_all_errors
-    puts "#{@errors.length} errors found."
-    @errors.each_with_index do |err, idx|
-      puts "#{idx + 1} - #{err} "
     end
   end
 end
