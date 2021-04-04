@@ -46,5 +46,11 @@ class Linters
       @errors << "You have an empty line on line #{idx + 1}, please remove it" if line.strip.empty?
     end
   end
+
+  def logAllErrors
+    @errors.each_with_index do |err,idx|
+     puts "#{idx + 1} - #{err} "
+    end
+  end
 end
 # rubocop:enable Metrics/PerceivedComplexity

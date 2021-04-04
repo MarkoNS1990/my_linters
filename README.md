@@ -23,6 +23,20 @@ To get a local copy of the repository please run the following commands on your 
 `$ cd my_linters`
 `$ rspec spec/linters_test.rb`
 
+## Test For Linter Errors
+
+> Copy your ruby file in the Ruby-Linters-Capstone folder
+
+```
+$ cd my_linters
+```
+
+```
+$ ruby bin/main.rb
+```
+
+It will log all errors in your code from test.rb file.
+
 ## Good and Bad examples
 
 ### **White trailing space**
