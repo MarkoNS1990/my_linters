@@ -48,7 +48,7 @@ end
 > Good example
 
 ```
-def my_method do|
+def my_method do
     puts 'Hello world'
 end
 ```
@@ -56,7 +56,7 @@ end
 > Bad example
 
 ```
-def my_method do |
+def my_method do
     puts 'Hello world'
 
 end
@@ -67,7 +67,7 @@ end
 > Good example
 
 ```
-def my_method do|
+def my_method do
     puts 'Hello world'
 end
 ```
@@ -75,7 +75,7 @@ end
 > Bad example
 
 ```
-def my_method do |
+def my_method do
     puts 'Hello world'
 end
 end
