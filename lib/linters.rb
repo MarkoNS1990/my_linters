@@ -1,4 +1,3 @@
-# rubocop:disable Metrics/PerceivedComplexity
 class Linters
   attr_reader :file_path, :content, :file_lines, :errors
 
@@ -24,16 +23,19 @@ class Linters
   def count_ends
     special_words = %w[def do if class]
     count_start = 0
+
     count_end = 0
+
     @file_lines.each do |line|
-      special_words.each do |word|
-        if line.split.include?(word)
-          count_start += 1
-        elsif line.strip == 'end'
-          count_end += 1
-        end
+      if (line.split & special_words).any?
+        count_start += 1
+
+      elsif line.strip == 'end'
+        count_end += 1
+
       end
     end
+
     if count_start < count_end
       @errors << 'You have an extra "end" in your code, please remove it'
     elsif count_start > count_end
@@ -48,9 +50,9 @@ class Linters
   end
 
   def log_all_errors
+    puts "#{@errors.length} errors found."
     @errors.each_with_index do |err, idx|
       puts "#{idx + 1} - #{err} "
     end
   end
 end
-# rubocop:enable Metrics/PerceivedComplexity
